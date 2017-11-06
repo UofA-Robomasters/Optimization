@@ -20,7 +20,7 @@ while True:
     input_string = input()
     ans = input_string[0]
     question = input_string[1:]
-    question.replace(" ", "")
+    question.strip()
     if question in v_table.keys():
         # print(alpha * (reward - v_table[question][ans2idx[ans]]), reward, v_table[question][ans2idx[ans]])
         v_table[question][ans2idx[ans]] = v_table[question][ans2idx[ans]] + alpha * (reward - v_table[question][ans2idx[ans]])

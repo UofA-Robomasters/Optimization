@@ -22,9 +22,9 @@ while True:
         continue
     input_string = input()
     question = input_string
-    question.replace(" ", "")
-    greedy_ans = v_table[question].index(max(v_table[question]))
+    question.strip()
     if question in v_table.keys():
+        greedy_ans = idx2ans[v_table[question].index(max(v_table[question]))]
         print(num, ": ", v_table[question], "greedy answer: ", greedy_ans)
     else:
         print(num, ": ", "never encountered.")
