@@ -14,17 +14,18 @@ def cool_down(heat):
     return heat
 
 def cal_dmg(v):
-    if 10 <= v <= 25:
-        return 50
-    else:
-        # linear assumed, expected value returned
-        prob_500 = 1 / (45 - 25) * (v - 25)
-        return prob_500 * 500 + (1 - prob_500) * 50
+    return 50
+    # if 10 <= v <= 25:
+    #     return 50
+    # else:
+    #     # linear assumed, expected value returned
+    #     prob_500 = 1 / (45 - 25) * (v - 25)
+    #     return prob_500 * 500 + (1 - prob_500) * 50
 
 HEAT_LIMIT = 6000
 COOL_SPEED = 2000
 
-v_list = np.arange(10, 46)                       # m/s
+v_list = np.arange(10, 30)                       # m/s
 f_list = np.linspace(0.1, 5, num=49)             # /s
 
 dmg_array = np.zeros((len(v_list), len(f_list)))
